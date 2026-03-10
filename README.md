@@ -1,256 +1,268 @@
-# 💍 ERP - Sistema de Gestão para Loja de Joias e Alianças
+## 💍 Sistema de Controle de Estoque, Garantias e Agendamentos
+📌 Sobre o Projeto
 
-## 📌 Sobre o Projeto
+Este projeto consiste no desenvolvimento de um sistema interno de gestão para uma loja especializada na venda de anéis, alianças e joias.
 
-Este projeto consiste no desenvolvimento de um **ERP (Enterprise
-Resource Planning)** voltado para uma loja especializada na venda de
-**anéis, alianças e joias**.
+Devido ao prazo reduzido de desenvolvimento, o sistema terá um escopo simplificado, focado apenas nas funcionalidades essenciais para o funcionamento diário da loja.
 
-O sistema tem como objetivo centralizar e organizar os processos
-internos da empresa, incluindo:
+O sistema terá como principais objetivos:
 
--   Cadastro e gestão de clientes
--   Controle de estoque (produtos e matéria-prima)
--   Registro de entradas e saídas
--   Gestão de vendas e financeiro
--   Emissão de garantias
--   Agendamento de atendimentos
+Controle de estoque de produtos
 
-O sistema será inicialmente desenvolvido com foco em simplicidade,
-organização e escalabilidade futura.
+Emissão e gerenciamento de garantias
 
-------------------------------------------------------------------------
+Organização de agendamentos de atendimento
 
-# 🎯 Objetivo
+Cadastro de clientes e produtos
 
-Desenvolver um sistema interno de gestão que:
+O projeto foi pensado para ser simples, organizado e facilmente expandido no futuro, caso seja necessário adicionar novos módulos.
 
--   Organize processos operacionais
--   Reduza falhas manuais
--   Centralize informações estratégicas
--   Permita rastreabilidade de operações
--   Seja simples, eficiente e de fácil manutenção
+🎯 Objetivo
 
-------------------------------------------------------------------------
+Criar uma ferramenta interna que permita:
 
-# 🧩 Escopo Funcional (Requisitos do Sistema)
+Organizar o estoque da loja
 
-## 1️⃣ Gestão de Usuários e Permissões
+Registrar garantias emitidas para clientes
 
--   Autenticação via login e senha
--   Perfis de acesso:
-    -   Administrador
-    -   Atendimento/Vendas
-    -   Estoque/Produção
-    -   Financeiro
--   Controle de permissões por perfil
--   Registro básico de auditoria (criação/edição de registros)
+Controlar agendamentos de atendimento
 
-------------------------------------------------------------------------
+Centralizar informações importantes da operação
 
-## 2️⃣ Cadastro de Clientes
+O sistema prioriza simplicidade, rapidez de uso e facilidade de manutenção.
 
--   Nome completo
--   CPF/CNPJ (opcional)
--   Telefone / WhatsApp
--   E-mail
--   Endereço (opcional)
--   Observações
--   Histórico de:
-    -   Compras
-    -   Garantias
-    -   Atendimentos agendados
+🧩 Escopo Funcional (Requisitos do Sistema)
+1️⃣ Gestão de Usuários
 
-------------------------------------------------------------------------
+Funcionalidades:
 
-## 3️⃣ Gestão de Produtos
+Login no sistema
 
--   Cadastro de modelos de produtos
--   Variações por:
-    -   Material (ouro 18k, prata 925, etc.)
-    -   Largura (mm)
-    -   Tipo de acabamento
-    -   Pedra (tipo e presença)
-    -   Numeração do aro
--   Controle de preço
--   Upload de imagens
--   Controle de estoque por variação
+Cadastro básico de usuários
 
-------------------------------------------------------------------------
+Perfis simples:
 
-## 4️⃣ Controle de Estoque
+Administrador
 
-### Produto Pronto
+Atendente
 
--   Registro de entrada (produção ou fornecedor)
--   Registro de saída (venda ou ajuste)
--   Estoque atual por variação
+2️⃣ Cadastro de Clientes
 
-### Matéria-Prima
+Campos principais:
 
--   Controle por unidade adequada (gramas ou unidades)
--   Registro de movimentações
--   Estoque mínimo configurável
+Nome
 
-------------------------------------------------------------------------
+Telefone / WhatsApp
 
-## 5️⃣ Gestão de Vendas
+Email (opcional)
 
--   Criação de venda vinculada a cliente
--   Itens da venda
--   Aplicação de desconto
--   Controle de status:
-    -   Orçamento
-    -   Reservado
-    -   Pago Parcial
-    -   Pago
-    -   Cancelado
--   Controle de formas de pagamento:
-    -   Pix
-    -   Cartão
-    -   Dinheiro
-    -   Parcelado
-    -   Sinal + restante
--   Registro automático de movimentação financeira
--   Geração futura de comprovante em PDF
+Observações
 
-------------------------------------------------------------------------
+Funcionalidades:
 
-## 6️⃣ Controle Financeiro
+Criar cliente
 
--   Registro de entradas e saídas
--   Classificação por categoria (ex.: aluguel, fornecedor, marketing)
--   Controle de caixa
--   Relatório por período
--   Histórico financeiro completo
+Editar cliente
 
-------------------------------------------------------------------------
+Listar clientes
 
-## 7️⃣ Emissão de Garantias
+Buscar cliente por nome ou telefone
 
--   Garantia vinculada a venda
--   Número sequencial automático
--   Data de emissão
--   Prazo de validade
--   Descrição do produto
--   Termos padrão editáveis
--   Geração em PDF
--   Reimpressão de garantia
+3️⃣ Cadastro de Produtos
 
-------------------------------------------------------------------------
+Campos principais:
 
-## 8️⃣ Agendamento de Atendimentos
+Nome do produto
 
--   Agenda diária/semanal
--   Vínculo com cliente
--   Motivo do atendimento
--   Responsável pelo atendimento
--   Status:
-    -   Marcado
-    -   Confirmado
-    -   Atendido
-    -   Cancelado
-    -   Faltou
--   Observações do atendimento
+Categoria
 
-------------------------------------------------------------------------
+Material
 
-# 📊 Requisitos Não Funcionais
+Numeração / tamanho
 
--   Sistema responsivo (uso em desktop e tablet)
--   Controle de acesso por perfil
--   Backup automatizado do banco de dados
--   Performance otimizada para operações CRUD
--   Estrutura modular e escalável
--   Código documentado e organizado
--   Possibilidade de exportação de dados (CSV)
+Descrição
 
-------------------------------------------------------------------------
+Preço de referência
 
-# 🏗 Arquitetura e Tecnologias Utilizadas
+Status (ativo / inativo)
 
-## 🔹 Backend
+Funcionalidades:
 
--   Node.js
--   NestJS
--   Prisma ORM
--   PostgreSQL
--   Autenticação via JWT
--   Documentação automática com Swagger
+Criar produto
 
-------------------------------------------------------------------------
+Editar produto
 
-## 🔹 Frontend
+Listar produtos
 
--   Next.js (React)
--   Mantine UI
--   React Hook Form
--   Zod (validação)
--   TanStack Table
+Ativar ou desativar produto
 
-------------------------------------------------------------------------
+4️⃣ Controle de Estoque
 
-## 🔹 Banco de Dados
+Tipos de movimentação:
 
--   PostgreSQL
+Entrada
 
-------------------------------------------------------------------------
+Saída
 
-## 🔹 Infraestrutura (Deploy)
+Ajuste de estoque
 
--   Backend: Render ou Fly.io
--   Frontend: Vercel
--   Banco: Supabase ou Neon
+Campos da movimentação:
 
-------------------------------------------------------------------------
+Produto
 
-# 📁 Estrutura Inicial do Projeto
+Tipo da movimentação
 
-    /erp-joias
-    │
-    ├── /api        → Backend (NestJS)
-    ├── /web        → Frontend (Next.js)
-    ├── /docs       → Documentações adicionais
-    └── README.md
+Quantidade
 
-------------------------------------------------------------------------
+Data
 
-# 📌 Metodologia e Organização
+Observação
 
-O gerenciamento de tarefas será realizado via Notion:
+Responsável
+
+Funcionalidades:
+
+Registrar entrada de produto
+
+Registrar saída de produto
+
+Ajustar estoque manualmente
+
+Visualizar saldo atual
+
+Consultar histórico de movimentações
+
+5️⃣ Emissão de Garantias
+
+Campos principais:
+
+Número da garantia (sequencial)
+
+Cliente
+
+Produto
+
+Data de emissão
+
+Prazo de validade
+
+Observações
+
+Funcionalidades:
+
+Emitir garantia
+
+Consultar garantia
+
+Reimprimir garantia
+
+Gerar PDF da garantia
+
+6️⃣ Agendamentos de Atendimento
+
+Campos principais:
+
+Cliente
+
+Data
+
+Hora
+
+Tipo de atendimento
+
+Observações
+
+Status
+
+Status possíveis:
+
+Agendado
+
+Concluído
+
+Cancelado
+
+Funcionalidades:
+
+Criar agendamento
+
+Editar agendamento
+
+Listar agendamentos
+
+Atualizar status
+
+📊 Requisitos Não Funcionais
+
+Interface simples e intuitiva
+
+Sistema responsivo (desktop e tablet)
+
+Controle de acesso por usuário
+
+Código organizado e modular
+
+Estrutura preparada para expansão futura
+
+🏗 Tecnologias Utilizadas
+Backend
+
+Node.js
+
+NestJS
+
+Prisma ORM
+
+PostgreSQL
+
+Autenticação via JWT
+
+Swagger para documentação da API
+
+Frontend
+
+Next.js (React)
+
+Mantine UI
+
+React Hook Form
+
+Zod
+
+TanStack Table
+
+Banco de Dados
+
+PostgreSQL
+
+🏗 Estrutura do Projeto
+erp-joias
+│
+├── api        → Backend (NestJS)
+├── web        → Frontend (Next.js)
+├── docs       → Documentação adicional
+└── README.md
+📌 Organização do Projeto
+
+O gerenciamento das tarefas e evolução do projeto é realizado através do Notion:
 
 https://www.notion.so/31098763f385807d8cd2f92980b78c3c?v=31098763f3858012a1af000cf76356e3&source=copy_link
 
-------------------------------------------------------------------------
+🚀 Roadmap Inicial
+Versão 1 (MVP)
 
-# 🚀 Roadmap Inicial (MVP)
+Sistema de login
 
-## Fase 1
+Cadastro de clientes
 
--   Autenticação e perfis
--   Cadastro de clientes
--   Cadastro de produtos e variações
--   Controle de estoque
--   Vendas
--   Emissão de garantias
--   Agenda de atendimentos
+Cadastro de produtos
 
-## Fase 2
+Controle de estoque
 
--   Ordem de serviço
--   Relatórios avançados
--   Alertas automáticos
--   Integração com notificações externas
+Emissão de garantias
 
-------------------------------------------------------------------------
+Sistema de agendamentos
 
-# 📌 Status do Projeto
+📌 Status do Projeto
 
-🟡 Em fase de planejamento e modelagem inicial.
-
-------------------------------------------------------------------------
-
-# 👨‍💻 Autor
-
-Projeto desenvolvido para uso interno de loja especializada em joias e
-alianças.
+🟡 Em fase de planejamento e estruturação inicial.
