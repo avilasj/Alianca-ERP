@@ -1,268 +1,123 @@
-## 💍 Sistema de Controle de Estoque, Garantias e Agendamentos
-📌 Sobre o Projeto
+# Sistema de Controle de Estoque, Garantias e Agendamentos
 
-Este projeto consiste no desenvolvimento de um sistema interno de gestão para uma loja especializada na venda de anéis, alianças e joias.
+## Descrição
 
-Devido ao prazo reduzido de desenvolvimento, o sistema terá um escopo simplificado, focado apenas nas funcionalidades essenciais para o funcionamento diário da loja.
+O Sistema de Controle de Estoque, Garantias e Agendamentos é uma aplicação desenvolvida para apoiar a operação interna de uma loja de joias, permitindo a gestão eficiente de produtos, clientes, garantias e atendimentos.
 
-O sistema terá como principais objetivos:
+O sistema centraliza processos operacionais, reduz erros manuais e melhora o controle sobre estoque e serviços prestados.
 
-Controle de estoque de produtos
+---
 
-Emissão e gerenciamento de garantias
+## Objetivos
 
-Organização de agendamentos de atendimento
+- Gerenciar o estoque de produtos
+- Controlar garantias emitidas
+- Organizar agendamentos de atendimento
+- Centralizar informações de clientes
+- Automatizar geração de documentos (PDF)
 
-Cadastro de clientes e produtos
+---
 
-O projeto foi pensado para ser simples, organizado e facilmente expandido no futuro, caso seja necessário adicionar novos módulos.
+## Visão de Arquitetura
 
-🎯 Objetivo
+O sistema foi modelado seguindo o padrão C4 Model, dividido em três níveis principais:
 
-Criar uma ferramenta interna que permita:
+- **C1 – Contexto do Sistema**
+- **C2 – Containers**
+- **C3 – Componentes**
 
-Organizar o estoque da loja
+---
 
-Registrar garantias emitidas para clientes
+## C1 – Diagrama de Contexto
 
-Controlar agendamentos de atendimento
+Este diagrama apresenta os atores principais e sua interação com o sistema.
 
-Centralizar informações importantes da operação
+![C1 - Contexto](./images/C1.jpeg)
 
-O sistema prioriza simplicidade, rapidez de uso e facilidade de manutenção.
+### Descrição
 
-🧩 Escopo Funcional (Requisitos do Sistema)
-1️⃣ Gestão de Usuários
+- **Administrador**
+  - Responsável pela gestão do sistema
+  - Realiza configurações e supervisão
 
-Funcionalidades:
+- **Atendente**
+  - Utiliza o sistema no dia a dia
+  - Responsável por cadastros, atendimentos e registros
 
-Login no sistema
+- **Sistema**
+  - Aplicação central que integra todas as funcionalidades da loja
 
-Cadastro básico de usuários
+---
 
-Perfis simples:
+## C2 – Diagrama de Containers
 
-Administrador
+Este nível detalha os principais blocos tecnológicos do sistema.
 
-Atendente
+![C2 - Containers](./images/C2.jpeg)
 
-2️⃣ Cadastro de Clientes
+### Componentes principais
 
-Campos principais:
+- **Aplicação Web (Next.js)**
+  - Interface acessada via navegador
+  - Responsável pela interação com o usuário
 
-Nome
+- **API (NestJS)**
+  - Camada de regras de negócio
+  - Processa requisições e coordena operações
 
-Telefone / WhatsApp
+- **Banco de Dados (PostgreSQL)**
+  - Armazena dados do sistema
+  - Persistência de informações
 
-Email (opcional)
+- **Serviço de PDF (Node.js)**
+  - Responsável pela geração de documentos de garantia
 
-Observações
+---
 
-Funcionalidades:
+## C3 – Diagrama de Componentes
 
-Criar cliente
+Detalhamento interno da API e seus módulos.
 
-Editar cliente
+![C3 - Componentes](./images/C3.jpeg)
 
-Listar clientes
+### Módulos da API
 
-Buscar cliente por nome ou telefone
+- **Módulo de Autenticação**
+  - Gerencia login e controle de acesso
 
-3️⃣ Cadastro de Produtos
+- **Módulo de Usuários**
+  - Gerencia usuários do sistema
 
-Campos principais:
+- **Módulo de Clientes**
+  - Cadastro e consulta de clientes
 
-Nome do produto
+- **Módulo de Produtos**
+  - Cadastro e gerenciamento de produtos
 
-Categoria
+- **Módulo de Estoque**
+  - Controle de entradas, saídas e histórico
 
-Material
+- **Módulo de Garantias**
+  - Emissão e consulta de garantias
 
-Numeração / tamanho
+- **Módulo de Agendamentos**
+  - Gestão de atendimentos e horários
 
-Descrição
+- **Camada de Persistência**
+  - Comunicação com o banco de dados via ORM
 
-Preço de referência
+- **Serviço de PDF**
+  - Geração de documentos de garantia
 
-Status (ativo / inativo)
+---
 
-Funcionalidades:
+## Tecnologias Utilizadas
 
-Criar produto
+- **Frontend:** Next.js
+- **Backend:** NestJS
+- **Banco de Dados:** PostgreSQL
+- **Serviços auxiliares:** Node.js (geração de PDF)
 
-Editar produto
+---
 
-Listar produtos
-
-Ativar ou desativar produto
-
-4️⃣ Controle de Estoque
-
-Tipos de movimentação:
-
-Entrada
-
-Saída
-
-Ajuste de estoque
-
-Campos da movimentação:
-
-Produto
-
-Tipo da movimentação
-
-Quantidade
-
-Data
-
-Observação
-
-Responsável
-
-Funcionalidades:
-
-Registrar entrada de produto
-
-Registrar saída de produto
-
-Ajustar estoque manualmente
-
-Visualizar saldo atual
-
-Consultar histórico de movimentações
-
-5️⃣ Emissão de Garantias
-
-Campos principais:
-
-Número da garantia (sequencial)
-
-Cliente
-
-Produto
-
-Data de emissão
-
-Prazo de validade
-
-Observações
-
-Funcionalidades:
-
-Emitir garantia
-
-Consultar garantia
-
-Reimprimir garantia
-
-Gerar PDF da garantia
-
-6️⃣ Agendamentos de Atendimento
-
-Campos principais:
-
-Cliente
-
-Data
-
-Hora
-
-Tipo de atendimento
-
-Observações
-
-Status
-
-Status possíveis:
-
-Agendado
-
-Concluído
-
-Cancelado
-
-Funcionalidades:
-
-Criar agendamento
-
-Editar agendamento
-
-Listar agendamentos
-
-Atualizar status
-
-📊 Requisitos Não Funcionais
-
-Interface simples e intuitiva
-
-Sistema responsivo (desktop e tablet)
-
-Controle de acesso por usuário
-
-Código organizado e modular
-
-Estrutura preparada para expansão futura
-
-🏗 Tecnologias Utilizadas
-Backend
-
-Node.js
-
-NestJS
-
-Prisma ORM
-
-PostgreSQL
-
-Autenticação via JWT
-
-Swagger para documentação da API
-
-Frontend
-
-Next.js (React)
-
-Mantine UI
-
-React Hook Form
-
-Zod
-
-TanStack Table
-
-Banco de Dados
-
-PostgreSQL
-
-🏗 Estrutura do Projeto
-erp-joias
-│
-├── api        → Backend (NestJS)
-├── web        → Frontend (Next.js)
-├── docs       → Documentação adicional
-└── README.md
-📌 Organização do Projeto
-
-O gerenciamento das tarefas e evolução do projeto é realizado através do Notion:
-
-https://www.notion.so/31098763f385807d8cd2f92980b78c3c?v=31098763f3858012a1af000cf76356e3&source=copy_link
-
-🚀 Roadmap Inicial
-Versão 1 (MVP)
-
-Sistema de login
-
-Cadastro de clientes
-
-Cadastro de produtos
-
-Controle de estoque
-
-Emissão de garantias
-
-Sistema de agendamentos
-
-📌 Status do Projeto
-
-🟡 Em fase de planejamento e estruturação inicial.
+## Estrutura do Projeto
